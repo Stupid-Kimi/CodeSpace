@@ -6,15 +6,17 @@ bool arr[N];
 vector<int> a, b;
 void init() {
     arr[1] = 0, arr[2] = 1, arr[3] = 1, arr[4] = 0;
-    for (int i = 2; i <= 16; i++)
-        for (int l = 1; l <= (1 << n); l++)
-            arr[l + (1 << n)] = 1 - arr[l];
+    for (int i = 2; i <= 15; i++)
+        for (int l = 1; l <= (1 << i); l++)
+            arr[l + (1 << i)] = 1 - arr[l];
 }
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);
     init();
+    // for (int i = 1; i <= 32; i++) cout << arr[i] << ' ';
+    cout << '\n';
     cin >> n >> k;
     n = (1 << n);
     for (int i = 1; i <= n / 2; i++)
