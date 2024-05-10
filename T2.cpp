@@ -24,7 +24,7 @@ int main()
     while(t--) {
         cin >> a >> b >> c;
         if (a != b && a != b - 1) {
-
+            
         } else {
             cout << 0 << '\n';
         }
