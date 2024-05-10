@@ -7,8 +7,8 @@ vector<int> a, b;
 void init() {
     arr[1] = 0, arr[2] = 1, arr[3] = 1, arr[4] = 0;
     for (int i = 2; i <= 16; i++)
-        for (int l = (1 << i), r = (1 << i) + 1; l >= 1; l--, r++)
-            arr[r] = arr[l];
+        for (int l = 1; l <= (1 << n); l++)
+            arr[l + (1 << n)] = 1 - arr[l];
 }
 int main() {
     ios::sync_with_stdio(false);
@@ -22,10 +22,8 @@ int main() {
             a.push_back(2 * i - 1), b.push_back(2 * i);
         else
             a.push_back(2 * i), b.push_back(2 * i - 1);
-    cout << 1 << '\n'
-         << n / 2 << ' ';
+    cout << 1 << '\n' << n / 2 << ' ';
     for (int i : a) cout << i << ' ';
-    cout << '\n'
-         << n / 2 << ' ';
+    cout << '\n' << n / 2 << ' ';
     for (int i : b) cout << i << ' ';
 }
